@@ -1,0 +1,106 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    height: 600px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    border: solid 2px black;
+}
+
+#display {
+    border: solid 2px grey;
+    padding: 4px;
+}
+
+#buttonContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2px;
+}
+
+#add {
+    grid-column: 4;
+    grid-row: 4;
+}
+
+#subtract {
+    grid-column: 4;
+    grid-row: 3;
+}
+
+#multiply {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+#divide {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+#equal {
+    grid-column: 3;
+    grid-row: 4;
+}
+
+#clear {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+#zero {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+#one {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+#two {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#three {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+#four {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#five {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#six {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#seven {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#eight {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#nine {
+    grid-column: 3;
+    grid-row: 1;
+}
