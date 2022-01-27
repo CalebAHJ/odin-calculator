@@ -13,7 +13,9 @@ body {
     border: solid 2px black;
 }
 
-#display {
+#displayContainer {
+    display: flex;
+    justify-content: flex-end;
     border: solid 2px grey;
     padding: 6px;
 }
