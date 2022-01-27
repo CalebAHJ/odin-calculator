@@ -4,8 +4,8 @@ body {
 }
 
 #container {
-    height: 600px;
-    width: 400px;
+    height: 320px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -15,7 +15,7 @@ body {
 
 #display {
     border: solid 2px grey;
-    padding: 4px;
+    padding: 6px;
 }
 
 #buttonContainer {
@@ -23,6 +23,10 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 2px;
+}
+
+button {
+    padding: 20px;
 }
 
 #add {
