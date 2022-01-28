@@ -22,3 +22,16 @@ function operate(operator, num1, num2) {
         case "/": return divide(num1, num2);
     }
 }
+
+function updateDisplay(numberString) {
+    if (display === 0) display = +numberString;
+    else display = +(display.toString() + numberString);
+    
+    document.getElementById('display').textContent = display.toString();
+}
+
+let display = 0;
+
+const numberButtons = document.querySelectorAll('button.number');
+numberButtons.forEach(button => button.addEventListener('click', 
+    () => updateDisplay(button.textContent)));
