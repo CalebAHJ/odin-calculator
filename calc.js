@@ -57,6 +57,7 @@ function equal() {
     if (operand !== 0 && display !== 0 && currentOperation !== 0) {
         display = operate(currentOperation, operand, display);
         document.getElementById('display').textContent = display.toString();
+        display = 0;
         operand = 0;
     }
 }
