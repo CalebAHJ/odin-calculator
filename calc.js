@@ -16,22 +16,62 @@ function divide(a, b) {
 
 function operate(operator, num1, num2) {
     switch(operator) {
-        case "+": return add(num1, num2);
-        case "-": return subtract(num1, num2);
-        case "*": return multiply(num1, num2);
-        case "/": return divide(num1, num2);
+        case 1: return add(num1, num2);
+        case 2: return subtract(num1, num2);
+        case 3: return multiply(num1, num2);
+        case 4: return divide(num1, num2);
     }
 }
 
 function updateDisplay(numberString) {
-    if (display === 0) display = +numberString;
-    else display = +(display.toString() + numberString);
-    
+    if (lastClickOperation === true) {
+        operand = display;
+        display = +numberString;
+    }
+    else {
+        if (display === 0) display = +numberString;
+        else display = +(display.toString() + numberString);
+    }
+
     document.getElementById('display').textContent = display.toString();
+    lastClickOperation =false;
+}
+
+function updateOperation(symbol) {
+    equal();
+
+    switch (symbol) {
+        case "+": currentOperation = 1;
+        break;
+        case "-": currentOperation = 2;
+        break;
+        case "*": currentOperation = 3;
+        break;
+        case "/": currentOperation = 4;
+        break;
+    }
+    lastClickOperation = true;
+}
+
+function equal() {
+    if (operand !== 0 && display !== 0 && currentOperation !== 0) {
+        display = operate(currentOperation, operand, display);
+        document.getElementById('display').textContent = display.toString();
+        operand = 0;
+    }
 }
 
 let display = 0;
+let operand = 0;
+let currentOperation = 0;
+let lastClickOperation = false;
 
 const numberButtons = document.querySelectorAll('button.number');
 numberButtons.forEach(button => button.addEventListener('click', 
     () => updateDisplay(button.textContent)));
+
+const operationButtons = document.querySelectorAll('button.operation');
+operationButtons.forEach(operation => operation.addEventListener('click', 
+    () => updateOperation(operation.textContent)));
+
+document.getElementById('equal').addEventListener('click', equal);
