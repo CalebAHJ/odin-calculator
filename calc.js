@@ -61,6 +61,15 @@ function equal() {
     }
 }
 
+function clear() {
+    operand = 0;
+    display = 0;
+    currentOperation = 0;
+    lastClickOperation = false;
+
+    document.getElementById('display').textContent = display.toString();
+}
+
 let display = 0;
 let operand = 0;
 let currentOperation = 0;
@@ -75,3 +84,4 @@ operationButtons.forEach(operation => operation.addEventListener('click',
     () => updateOperation(operation.textContent)));
 
 document.getElementById('equal').addEventListener('click', equal);
+document.getElementById('clear').addEventListener('click', clear);
